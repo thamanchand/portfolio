@@ -11,13 +11,15 @@ interface Project {
   image: string;
   link: string;
   github?: string;
+  icon?: string;
 }
 
 const projects: Project[] = [
   {
     id: 1,
     title: "NavGoX",
-    description: "Save $1,200/Year with AI-Optimized Multi-Stop Routes",
+    description:
+      "📍 AI-Powered Multi stop route optimization for solo driver and gig workers.",
     longDescription:
       "Delivery drivers earn 25% more with routes that adapt to traffic, weather, and your delivery patterns in real-time. Join 560+ drivers saving time and fuel every day",
     technologies: [
@@ -31,6 +33,27 @@ const projects: Project[] = [
     image: "/navgox.png",
     link: "https://navgox.com",
     github: "https://github.com/thamanchand/godel",
+    icon: "navgox-icon.png",
+  },
+
+  {
+    id: 3,
+    title: "ParkScan",
+    description: "Snap the Sign. Skip the Ticket.",
+    longDescription:
+      "ParkScan helps you understand confusing street signs in seconds — just take a photo.",
+    technologies: [
+      "React.js",
+      "React-Native",
+      "TypeScript",
+      "Tailwind",
+      "Supabase",
+      "Vercel",
+    ],
+    image: "/parkscan.png",
+    icon: "/parkscan-icon.png",
+    link: "https://parksnapai.vercel.app/",
+    github: "https://github.com/thamanchand/parksnap-landing-page",
   },
   {
     id: 2,
@@ -40,19 +63,9 @@ const projects: Project[] = [
       "ChainAI is where builders, marketers, and founders trade time-saving automations for Make, Zapier, n8n and etc.",
     technologies: ["React.js", "TypeScript", "Tailwind", "Supabase", "Vercel"],
     image: "/jaal-ai.png",
+    icon: "/jaaalai-icon.png",
     link: "https://www.jaalai.com/",
     github: "https://github.com/thamanchand/JaalAI",
-  },
-  {
-    id: 3,
-    title: "ParkScan",
-    description: "Snap the Sign. Skip the Ticket.",
-    longDescription:
-      "ParkScan helps you understand confusing street signs in seconds — just take a photo.",
-    technologies: ["React.js", "TypeScript", "Tailwind", "Supabase", "Vercel"],
-    image: "/parkscan.png",
-    link: "https://parksnapai.vercel.app/",
-    github: "https://github.com/thamanchand/parksnap-landing-page",
   },
   {
     id: 4,
@@ -62,6 +75,7 @@ const projects: Project[] = [
       "Provides real-time bus stop information and locations within the Helsinki metropolitan area.",
     technologies: ["React.js", "TypeScript", "SCSS", "GraphQL", "Vercel"],
     image: "/hsl-api.png",
+    icon: "/hsl-icon.png",
     link: "https://hsl-api-test.vercel.app/",
     github: "https://github.com/thamanchand/hsl-api-test",
   },
@@ -73,6 +87,7 @@ const projects: Project[] = [
       "Get quotations from different van providers and accept what fits your budget. Simplify your van booking experience.",
     technologies: ["React.js", "Redux", "Strapi"],
     image: "muuvz.png",
+    icon: "muuvz-icon.png",
     link: "https://muuvz.in",
   },
   {
@@ -83,6 +98,7 @@ const projects: Project[] = [
       "Streamline the process of creating a legally valid last will quickly and efficiently.",
     technologies: ["React.js", "Redux", "Strapi"],
     image: "perukirjakone.png",
+    icon: "perukirjakone-icon.png",
     link: "https://perukirjakone.fi",
     github: "https://github.com/thamanchand/perukirjakone",
   },
@@ -105,13 +121,17 @@ const ProjectsSection: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#22d3ee]/10 text-[#22d3ee] text-sm font-medium mb-4">
-            Side Hustles
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-sm font-medium mb-4">
+            Independent Projects
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Some of my <span className="text-[#22d3ee]">side hustle</span>{" "}
-            projects
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
+            Independent <span className="gradient-text">Projects</span>
           </h2>
+
+          <p className="text-muted-foreground text-lg">
+            Some of my side projects which I'm proud of
+          </p>
         </motion.div>
 
         {/* Projects */}
@@ -137,10 +157,18 @@ const ProjectsSection: React.FC = () => {
                       {(index + 1).toString().padStart(2, "0")}
                     </span>
                   </div>
-
-                  <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                    {project.title}
-                  </h2>
+                  <div className="flex items-center space-x-4">
+                    {project.icon && (
+                      <img
+                        src={project.icon}
+                        alt={project.title}
+                        className="w-12 h-12"
+                      />
+                    )}
+                    <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+                      {project.title}
+                    </h2>
+                  </div>
 
                   <p className="text-2xl text-muted-foreground">
                     {project.description}

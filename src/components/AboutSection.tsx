@@ -9,6 +9,9 @@ import {
   Linkedin,
   Mail,
   ChevronRight,
+  Zap,
+  LightbulbIcon,
+  GitBranch,
 } from "lucide-react";
 
 const AboutSection: React.FC = () => {
@@ -33,28 +36,28 @@ const AboutSection: React.FC = () => {
 
   const highlights = [
     {
-      icon: <Code size={24} />,
-      title: "Full Stack Development",
-      description:
-        "Building complete web applications, from backend systems to responsive frontends.",
-    },
-    {
-      icon: <Globe size={24} />,
-      title: "Modern Technologies",
-      description:
-        "Working with the latest frameworks and tools to create cutting-edge digital experiences.",
-    },
-    {
-      icon: <Rocket size={24} />,
-      title: "Performance Optimization",
-      description:
-        "Ensuring applications run smoothly and load quickly across all devices.",
-    },
-    {
       icon: <Users size={24} />,
-      title: "Team Leadership",
+      title: "Team Player",
       description:
-        "Leading development teams and mentoring junior developers to achieve project goals.",
+        "Collaborating effectively with cross-functional teams, sharing knowledge, and contributing to a positive work environment.",
+    },
+    {
+      icon: <Zap size={24} />,
+      title: "Fast Learner",
+      description:
+        "Quickly adapting to new technologies and methodologies, staying current with industry trends and best practices.",
+    },
+    {
+      icon: <LightbulbIcon size={24} />,
+      title: "Problem Solving",
+      description:
+        "Breaking down complex challenges into manageable solutions, with a focus on efficiency and scalability.",
+    },
+    {
+      icon: <GitBranch size={24} />,
+      title: "Agile",
+      description:
+        "Embracing iterative development, adaptability, and continuous improvement in project delivery.",
     },
   ];
 
@@ -90,7 +93,7 @@ const AboutSection: React.FC = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.span
-            className="inline-block px-4 py-1.5 rounded-full bg-secondary text-sm font-medium"
+            className="inline-block px-4 py-1.5 rounded-full bg-secondary text-md font-medium"
             variants={itemVariants}
           >
             About Me

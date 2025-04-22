@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
           >
             <motion.span
-              className="inline-block mb-4 px-4 py-1.5 rounded-full bg-secondary text-foreground text-sm font-medium"
+              className="inline-block mb-4 px-4 py-1.5 rounded-full bg-secondary text-foreground text-md font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
             </motion.span>
 
             <motion.h1
-              className="text-12xl md:text-12xl lg:text-9xl font-londrina-outline mb-6 tracking-wider uppercase text-balance leading-tight"
+              className="text-6xl md:text-9xl sm:text-4xl lg:text-9xl font-londrina-outline mb-6 tracking-wider uppercase text-balance leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.8 }}
