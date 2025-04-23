@@ -78,6 +78,82 @@ const ExperienceSection: React.FC = () => {
         "Developed analytics and reporting tools, improving operational efficiency and decision-making for HR and management.",
       ],
     },
+    {
+      id: 1,
+      role: "Chief Technology Officer",
+      company: "Northcatalyst",
+      location: "Turku Area, Finland",
+      period: "Jul 2015 - Aug 2016",
+      description: [
+        "Developed custom e-learning platforms using open-source solutions.",
+        "Spearheaded backend architecture with Python, Django, and PostgreSQL.",
+        "Led technical team in implementing scalable and maintainable solutions.",
+      ],
+    },
+    {
+      id: 2,
+      role: "UI/UX Designer & Marketing Assistant Intern",
+      company: "Super Analytics",
+      location: "Turku, Finland",
+      period: "May 2015 - Jul 2015",
+      description: [
+        "Designed and developed the landing page for SuperBrain.io using HTML5, CSS, JavaScript, jQuery, and Bootstrap.",
+        "Collaborated with marketing team to implement marketing plans, increasing user engagement.",
+        "Optimized landing page for SEO, improving search rankings and organic traffic by 20%.",
+        "Conducted A/B testing, improving conversion rates by 15%.",
+        "Ensured cross-browser compatibility and accessibility for all users.",
+      ],
+    },
+    {
+      id: 3,
+      role: "Full Stack Developer",
+      company: "Nordic Venture Family",
+      location: "Turku, Finland",
+      period: "May 2014 - Sep 2014",
+      description: [
+        "Designed and developed a video content management system (CMS) for client asset management.",
+        "Implemented responsive design and cross-browser compatibility.",
+        "Enabled clients to upload assets, select templates, and customize video productions.",
+      ],
+    },
+    {
+      id: 4,
+      role: "Chief Technology Officer",
+      company: "crowdTOD",
+      location: "Turku, Finland",
+      period: "Aug 2013 - Jul 2014",
+      description: [
+        "Selected for BoostTurku 2013 Summer camp, highlighting innovative potential.",
+        "Developed a crowd-based platform for requesting, funding, and creating tutorials.",
+        "Built platform using Python, Django, PostgreSQL, AngularJS, and modern web technologies.",
+        "Implemented RESTful API, Bootstrap, Git, and cloud infrastructure.",
+      ],
+    },
+    {
+      id: 5,
+      role: "Research Assistant",
+      company: "Turku Centre for Biotechnology | Proteomics",
+      location: "Turku, Finland",
+      period: "Apr 2012 - Apr 2013",
+      description: [
+        "Developed web application for protein pattern analysis using Python, Django, and PostgreSQL.",
+        "Optimized data extraction and visualization for proteomics research.",
+        "Contributed to peer-reviewed publications on proteomics research.",
+        "Conducted performance testing of statistical methods on proteomics data.",
+      ],
+    },
+    {
+      id: 6,
+      role: "Software Engineer",
+      company: "Turun yliopisto",
+      location: "Turku, Finland",
+      period: "Jan 2016 - May 2017",
+      description: [
+        "Engineered a Personnel Management System for the Turku Centre for Biotechnology.",
+        "Integrated with the University of Turku API for seamless data synchronization.",
+        "Developed analytics and reporting tools for HR and management.",
+      ],
+    },
   ];
 
   return (

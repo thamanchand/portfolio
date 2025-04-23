@@ -1,9 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  Code,
-  Globe,
-  Rocket,
   Users,
   Github,
   Linkedin,
@@ -125,10 +122,11 @@ const AboutSection: React.FC = () => {
             className="text-muted-foreground text-lg"
             variants={itemVariants}
           >
-            I'm passionate about open source, continuous learning, and mentoring
-            the next generation of developers. When I'm not coding, you might
-            find me exploring emerging technologies or contributing to developer
-            communities.
+            I'm passionate about continuous learning, implementing cutting-edge
+            solutions, and sharing knowledge through practical applications.
+            When I'm not coding, you might find me exploring emerging
+            technologies or building innovative solutions to real-world
+            problems.
           </motion.p>
 
           <motion.div

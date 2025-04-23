@@ -1,7 +1,104 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import HeroCanvas from "./three/HeroCanvas";
+
+const skills = {
+  design: ["UI/UX Design", "Design System", "Figma", "Prototyping", "Sketch"],
+  frontend: [
+    "React.js",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Three.js",
+    "Framer Motion",
+    "Tailwind CSS",
+    "Cypress",
+    "Storybook",
+  ],
+  backend: [
+    "Node.js",
+    "Python",
+    "GraphQL",
+    "REST APIs",
+    "WebSockets",
+    "Webhooks",
+    "MongoDB",
+    "PostgreSQL",
+  ],
+  cicd: [
+    "Docker",
+    "AWS",
+    "Git",
+    "CI/CD",
+    "Agile",
+    "Scrum",
+    "Product Management",
+    "Cursor IDE",
+    "AI",
+    "LLMs",
+  ],
+};
+
+const FloatingSkills: React.FC = () => {
+  const getRandomPosition = () => {
+    const angle = Math.random() * Math.PI * 2;
+    const radius = Math.random() * 300 + 200;
+    return {
+      x: Math.cos(angle) * radius,
+      y: Math.sin(angle) * radius,
+    };
+  };
+
+  const allSkills = [
+    ...skills.design,
+    ...skills.frontend,
+    ...skills.backend,
+    ...skills.cicd,
+  ];
+
+  return (
+    <div className="relative h-full w-full flex items-center justify-center">
+      <div className="relative w-full h-full">
+        {allSkills.map((skill, index) => {
+          const { x, y } = getRandomPosition();
+          return (
+            <motion.div
+              key={index}
+              className="absolute text-xl text-white font-bold px-6 py-3 rounded-full bg-background/40 backdrop-blur-sm shadow-lg"
+              initial={{
+                opacity: 0,
+                x: x,
+                y: y,
+                scale: 2,
+              }}
+              animate={{
+                opacity: [0, 1, 1, 0],
+                x: [x, 0, 0, 0],
+                y: [y, 0, 0, 0],
+                scale: [2, 1, 1, 0.5],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                delay: index * 0.5,
+                ease: [0.2, 0, 0.1, 1],
+                times: [0, 0.4, 0.8, 1],
+              }}
+              style={{
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              {skill}
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -70,13 +167,15 @@ const HeroSection: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column (Image) */}
+          {/* Right Column (Skills) */}
           <motion.div
-            className="md:w-1/2 mt-12 md:mt-0 flex justify-center"
+            className="md:w-1/2 h-full flex items-center justify-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-          ></motion.div>
+          >
+            <FloatingSkills />
+          </motion.div>
         </div>
 
         {/* Scroll Down Button - Remains centered */}
