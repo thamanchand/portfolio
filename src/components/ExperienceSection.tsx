@@ -142,18 +142,6 @@ const ExperienceSection: React.FC = () => {
         "Conducted performance testing of statistical methods on proteomics data.",
       ],
     },
-    {
-      id: 6,
-      role: "Software Engineer",
-      company: "Turun yliopisto",
-      location: "Turku, Finland",
-      period: "Jan 2016 - May 2017",
-      description: [
-        "Engineered a Personnel Management System for the Turku Centre for Biotechnology.",
-        "Integrated with the University of Turku API for seamless data synchronization.",
-        "Developed analytics and reporting tools for HR and management.",
-      ],
-    },
   ];
 
   return (
